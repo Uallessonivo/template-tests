@@ -20,9 +20,9 @@ describe("Get statement operation", () => {
 
   it("should be able to get statement operation from user", async () => {
     const user = await inMemoryUsersRepository.create({
-      name: "test",
-      email: "test@test.com",
-      password: "test",
+      name: "uallesson",
+      password: "uallesson",
+      email: "uallesson@uallesson.com",
     });
 
     if (!user.id) fail("User ID is probably undefined");
@@ -65,12 +65,12 @@ describe("Get statement operation", () => {
   it("should not be able to get non-existent statement operation from user", async () => {
     await expect(async () => {
       const user = await inMemoryUsersRepository.create({
-        name: "test",
-        email: "test@test.com",
-        password: "test",
+        name: "uallesson",
+        password: "uallesson",
+        email: "uallesson@uallesson.com",
       });
 
-      if (!user.id) fail("User ID is probably undefined");
+      if (!user.id) fail("Something went wrong");
 
       await getStatementOperationUseCase.execute({
         user_id: user.id,

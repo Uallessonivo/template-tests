@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn ./src/server.ts",
-    "test": "NODE_ENV=test jest",
+    "test": "set NODE_ENV=test&& jest",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli"
   },
   "dependencies": {
@@ -28,6 +28,7 @@
     "@types/jest": "^27.0.3",
     "@types/jsonwebtoken": "^8.5.1",
     "@types/node": "^14.14.35",
+    "@types/supertest": "^2.0.11",
     "@types/uuid": "^8.3.0",
     "jest": "^27.4.3",
     "ts-jest": "^27.1.0",

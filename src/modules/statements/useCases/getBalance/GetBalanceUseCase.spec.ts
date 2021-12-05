@@ -20,9 +20,9 @@ describe("Get balance", () => {
 
   it("should be able to get user's balance", async () => {
     const user = await inMemoryUsersRepository.create({
-      name: "test",
-      email: "test@test.com",
-      password: "test",
+      name: "uallesson",
+      password: "uallesson",
+      email: "uallesson@uallesson.com",
     });
 
     if (!user.id) return;
@@ -31,12 +31,12 @@ describe("Get balance", () => {
       user_id: user.id,
       type: OperationType.DEPOSIT,
       description: "Test user balance deposit description",
-      amount: 1230,
+      amount: 1750,
     });
 
     const balance = await getBalanceUseCase.execute({ user_id: user.id });
 
-    expect(balance.balance).toEqual(1230);
+    expect(balance.balance).toEqual(1750);
   });
 
   it("should not be able to get balance from non-existent user", async () => {
